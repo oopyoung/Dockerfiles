@@ -1,0 +1,38 @@
+# Linux + Nginx + Mongodb + PHP
+
+nginx:
+    build: .././nginx
+    ports:
+      - "80:80"
+    links:
+      - "php"
+    volumes:
+      - ~/opt:/opt
+
+php:
+    build: .././php
+    ports:
+      - "9000:9000"
+    links:
+      - "mongodb"
+      - "memcache"
+      - "redis"
+    volumes:
+      - ~/opt:/opt
+
+mongodb:
+    build: .././mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/opt/data/mongodb:/var/lib/mongodb
+
+memcache:
+    build: .././memcache
+    ports:
+      - "11211:11211"
+
+redis:
+    build: .././redis
+    ports:
+      - "6379:6379"

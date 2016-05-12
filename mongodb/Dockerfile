@@ -1,0 +1,4 @@
+FROM mongo:3.0.4
+
+EXPOSE 27017
+VOLUME ["/opt"]

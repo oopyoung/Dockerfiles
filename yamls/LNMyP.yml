@@ -1,5 +1,7 @@
+# Linux + Nginx + Mysql + PHP
+
 nginx:
-    build: ./nginx
+    build: .././nginx
     ports:
       - "80:80"
     links:
@@ -8,7 +10,7 @@ nginx:
       - ~/opt:/opt
 
 php:
-    build: ./php
+    build: .././php
     ports:
       - "9000:9000"
     links:
@@ -19,7 +21,7 @@ php:
       - ~/opt:/opt
 
 mysql:
-    build: ./mysql
+    build: .././mysql
     ports:
       - "3306:3306"
     volumes:
@@ -28,11 +30,11 @@ mysql:
       MYSQL_ROOT_PASSWORD: 123456
 
 memcache:
-    build: ./memcache
+    build: .././memcache
     ports:
       - "11211:11211"
 
 redis:
-    build: ./redis
+    build: .././redis
     ports:
       - "6379:6379"
